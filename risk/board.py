@@ -1,4 +1,4 @@
-#learning version! make sure to update. worked with vik, shashank, alex
+#learning version! worked with vik, shashank, alex
 
 import os
 import random
