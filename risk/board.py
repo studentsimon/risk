@@ -1,3 +1,5 @@
+#learning version! make sure to update. worked with vik, shashank, alex
+
 import os
 import random
 from collections import namedtuple
