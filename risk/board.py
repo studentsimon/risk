@@ -263,7 +263,7 @@ class Board(object):
         Returns:
             bool: True if reinforcing the target from the source territory is a valid move
         '''
-        if self._fortify(source, target):
+        if self._fortify(source, target) == None:
             return False
         return True
     def cheapest_attack_path(self, source, target):
