@@ -117,31 +117,29 @@ class Board(object):
         A path is list of territories satisfying two conditions:
         1. For all territories V in the list (except the last one), the next territory W is in the neighbors if V.
         2. No territory is repeated multiple times.
-        3. Valid paths can be of any length (including 0 and 1).
+        Valid paths can be of any length (including 0 and 1).
         Args:
             path ([int]): a list of territory_ids which represent the path
         Returns:
             bool: True if the input path is valid
         '''
 
-        # checks for condition 3
-        if len(path) == 1 or len(path) == 0:
 
+        if len(path) == 0 or len(path) == 1:
             return True
 
-        # checks for condition 2
-        elif len(path) != len(set(path)):
+        if len(path) != len(set(path)):
             return False
 
-        else:
-            for i in range(len(path)-1):
 
-                cur_country=path[i]
-                next_country=path[i+1]
-                if next_country not in risk.definitions.territory_neighbors[cur_country]:
+        else:
+            for territory in range (len(path)-1):
+                t1 = path[territory]
+                t2 = path[territory + 1]
+                #checks if neighbor if not return false. Else return true after full iteration.
+                if t2 not in risk.definitions.territory_neighbors[t1]:
                     return False
             return True
-
     
     def is_valid_attack_path(self, path):
         '''
