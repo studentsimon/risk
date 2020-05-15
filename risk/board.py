@@ -175,15 +175,16 @@ class Board(object):
         Args:
             path ([int]): a list of territory_ids which must be a valid attack path
         Returns:
-            int: the number of enemy armies in the path
+            bool: the number of enemy armies in the path
         '''
 
-        cost=0
-        for country in path:
-            if country == path[0]:
+        #figure out cost of the path
+        z = 0
+        for a in path:
+            if a == path[0]:
                 continue
-            cost+=self.armies(country)
-        return cost
+            z = z+self.armies(a)
+        return z
     
     def shortest_path(self, source, target):
         '''
