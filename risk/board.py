@@ -215,7 +215,7 @@ class Board(object):
         array1 = []
         array1.append(source)
         q1 = deque([])
-        q1.append(start)
+        q1.append(array1)
         board = risk.definitions.territory_names
         board = list(board.keys())
         if source == target:
