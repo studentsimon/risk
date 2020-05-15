@@ -147,25 +147,25 @@ class Board(object):
         a player's armies cannot move through territories they already occupy;
         they must move through enemy territories.
         All valid attacks, therefore, will follow a path of starting on one player's territory and moving trough enemy territories.
-        0. Formally, an attack path is a valid path satisfying the following two additional properties:
+        Formally, an attack path is a valid path satisfying the following two additional properties:
         1. An attack path must contain at least two territories;
-        2. If the first territory is owned by player A, then no other territories in the path are also owned by A.
+        1. If the first territory is owned by player A, then no other territories in the path are also owned by A.
         Args:
             path ([int]): a list of territory_ids which represent the path
         Returns:
             bool: True if the path is an attack path
         '''
 
-        if len(path) < 2 or not self.is_valid_path(path):
+        if self.is_valid_path(path) != True:
             return False
-
+        elif len(path) < 2:
+            return False
         else:
-            player_id = self.owner(path[0])
-            for country in path:
-                if path[0] != country and self.owner(country) == player_id:
+            user = self.owner(path[0])
+            for z in path:
+                if path[0] != z and self.owner(z) == user:
                     return False
             return True
-
 
 
     def cost_of_attack_path(self, path):
