@@ -213,7 +213,7 @@ class Board(object):
             [int]: a valid path between source and target that has minimum length; this path is guaranteed to exist
         '''
         array1 = []
-        array.append(source)
+        array1.append(source)
         q1 = deque([])
         q1.append(start)
         board = risk.definitions.territory_names
@@ -232,7 +232,7 @@ class Board(object):
                 q1.append(deep1)
                 board.remove(territory)
 
-    def _fortify(self,source, target):
+    def _fortify(self, source, target):
         stack = []
         stack.append(source)
         queue = deque([])
