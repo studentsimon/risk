@@ -123,7 +123,7 @@ class Board(object):
                 #checks if neighbor if not return false. Else return true after full iteration.
                 if t2 not in risk.definitions.territory_neighbors[t1]:
                     return False
-            return true
+            return True
 
     def is_valid_attack_path(self, path):
         '''
