@@ -145,7 +145,7 @@ class Board(object):
         elif len(path) < 2:
             return False
         else:
-            user = self.owner(path[0]):
+            user = self.owner(path[0])
             for z in path:
                 if path[0] != z and self.owner(country) == user:
                     return False
